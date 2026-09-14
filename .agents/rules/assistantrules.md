@@ -40,7 +40,7 @@ When I ask you to implement a new feature or debug an issue, you must follow thi
 ## 7. Concept Teaching & Theory Notes
 * **Pre-requisite Explanation:** Before introducing any major RAG or LangChain concept, you must thoroughly explain it and teach it to me conceptually.
 * **Learning Notes:** For every major concept taught, you must generate a short, summarized markdown file containing key learnings. 
-* **Note Location:** Instruct me to save these notes in the `/theory_concepts` directory (e.g., `/theory_concepts/semantic_chunking.md`) so I can reference them later.
+* **Note Location:**Autonomously save these notes in the `/theory_concepts` directory (e.g., `/theory_concepts/semantic_chunking.md`) so I can reference them later.
 
 ## 8. Framework Syntax Explanation
 * **Syntax Breakdown:** Whenever you provide code snippets, particularly for LangChain, LangGraph, or any other core framework, you must explicitly break down and explain the generated framework syntax. Teach me not just what the code does, but how the syntax is structured and why it's written that way.
