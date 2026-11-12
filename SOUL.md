@@ -15,9 +15,11 @@ This document serves as the central memory system for human-agent collaboration 
   - Subprocess Code Execution Engine with `@traceable` telemetry and defensive headless plotting (`core/executor.py`).
   - Core LangGraph workflow compilation (`core/graph.py`).
   - Full unit test suite with `pytest` (`tests/test_executor.py`, `tests/test_graph.py`) — **6/6 tests passing**.
-* **Phase 2 (Concurrent Agent Development):**
-  - **Track A (Core Infrastructure & Execution Engine):** Data Ingestion, Semantic Chunking, Embeddings, Vector Store / Retriever, and self-healing execution loops.
-  - **Track B (Specialized Agents & Presentation Layer):** Prompt engineering for specialized agents (Explorer, Modeler, Storyteller), LangGraph node logic, and Streamlit/FastAPI UI.
+* **Phase 2 (Hierarchical Squad Architecture):**
+  - **Orchestrator (Top-Level):** Macro-level workflow director coordinating specialized agent squads.
+  - **Squad Pattern (Triad Loop):** Each squad operates in a self-healing cyclic LangGraph subgraph (Lead Reviewer/Checklist Owner ↔ Coder ↔ Deterministic Sandbox/Profiler) with per-task iteration caps and snapshot rollback.
+  - **Squad 1 (Initial Data Cleaning & Profiling):** Deterministic X-Ray Profiler + 7-Step Cleaning Checklist (`core/profiler.py`, `agents/cleaning_squad.py`).
+  - **Squad 2+ (EDA, Feature Engineering, Modeling, Storytelling):** Subsequent specialized squads built on the same verified subgraph pattern.
 
 ---
 
@@ -41,19 +43,18 @@ This document serves as the central memory system for human-agent collaboration 
 - [x] Created unit test suite in `tests/`.
 - [x] Fixed matplotlib dependency & verified 6/6 tests passing.
 
-### Phase 2: Agent Development (Starting Now)
-- [ ] Build the real **Explorer (Data Analyst / EDA) Agent** (`agents/explorer.py`).
-  - [ ] Implement data profiling & schema extraction.
-  - [ ] Implement LLM target/task inference via LangChain structured output.
-  - [ ] Implement unit tests (`tests/test_explorer.py`).
-- [ ] Build the real **Modeler (ML Engineer) Agent** (`agents/modeler.py`).
-  - [ ] Implement dynamic scikit-learn training script generation.
-  - [ ] Implement model evaluation & metrics capture.
-  - [ ] Implement unit tests (`tests/test_modeler.py`).
+### Phase 2: Hierarchical Squad Development (In Progress)
+- [x] Locked in Hierarchical Squad Triad Architecture (Lead Reviewer ↔ Coder ↔ Deterministic Profiler/Sandbox).
+- [ ] Build Deterministic X-Ray Profiler (`core/profiler.py` + `tests/test_profiler.py`).
+- [ ] Finalize Lead Data Scientist Checklist & Evaluation Gates.
+- [ ] Build **Squad 1: Data Cleaning Subgraph** (`agents/cleaning_squad.py` + `tests/test_cleaning_squad.py`).
+- [ ] Build **Squad 2: EDA & Problem Framing Subgraph**.
+- [ ] Build **Squad 3: Model Training & Optimization Subgraph**.
+- [ ] Build **Squad 4: Storytelling & UI Layer (`app.py`)**.
 
 ---
 
 ## 🎯 Next Steps
-1. Introduce concept and design for **The Explorer (Data Analyst) Agent**.
-2. Save theory note on **Structured Outputs in LangChain** (`theory_concepts/structured_outputs.md`).
-3. Implement `agents/explorer.py` and its companion unit tests in `tests/test_explorer.py`.
+1. Lock down the exact Data Cleaning Checklist & Reviewer Evaluation Gates.
+2. Save theory note on **Automated Tabular Data Cleaning & Validation Gates** (`theory_concepts/data_cleaning_checklist.md`).
+3. Implement `core/profiler.py` (Deterministic Data X-Ray) with companion unit tests (`tests/test_profiler.py`).
